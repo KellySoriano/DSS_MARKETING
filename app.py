@@ -6,6 +6,9 @@ st.set_page_config(page_title="Dashboard Marketing", layout="wide")
 
 df = pd.read_csv("marketing_campaign(1).csv", sep="\t")
 
+# Limpiar estados civiles irrelevantes
+df = df[~df["Marital_Status"].isin(["YOLO", "Absurd", "Alone"])]
+
 st.title("📊 DSS para Segmentación de Clientes en Marketing Digital")
 
 st.markdown("---")
